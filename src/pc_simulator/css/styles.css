@@ -1,0 +1,209 @@
+html {
+	width:100%;
+	height:100%;
+}
+
+body{
+	height:100%;
+ 	min-width: 650px;
+	background: #DEDEDE none repeat scroll 0% 0%;
+	color: #222;
+	font: 100% Sans-serif;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+header{
+	height: 40px !important;
+	padding: 10px 15px !important;
+	background: #333 none repeat scroll 0% 0% !important;
+	border-bottom: 5px solid #08C !important;
+}
+
+#title{
+	float: left;
+	color: #ddd;
+	margin: 4px 10px;
+}
+
+#title a:link{
+	color: #ddd;
+	font-style:bold;
+	text-decoration: none;
+}
+
+#note{
+	float: right;
+	color: #ddd;
+	margin: 4px 10px;
+	font-size: 10px;
+}
+
+#note a:link{
+	color: #ddd;
+	font-style:bold;
+	text-decoration: none;
+	float: right;
+}
+
+nav{
+	display: inline !important;
+	float: right !important;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+nav li a:link{
+	color:#bbb;
+	font-size:20px;
+	font-style:bold;
+	text-decoration: none;
+}
+
+nav li a:hover{
+	color:#fff;
+}
+
+nav ul li{
+	list-style-type: none;
+	color: #fff;
+	font-style: bold;
+	float: left !important;
+	font-size: 16px !important;
+	font-family: Sans-serif !important;
+	/*line-height: 45px !important;*/
+	padding-right: 50px !important;
+	padding-left: 15px !important;
+}
+
+
+#main {
+	width: 95%;
+	height: 95%;
+	margin: 20px 50px;
+	text-align: left;
+	font-size: 0.812em;
+	padding: 0px;
+	line-height: 1.4;
+}
+
+.inp{
+	font-style: bold;
+}
+.gaubox{
+	width: 23.5%;
+	float:left;
+	display: inline-block;
+	margin: 5px;
+	padding: 3px;
+	border: 1px solid #08C;
+	background-color: #F5F5F5;
+}
+
+.gauboxSpecial{
+	width: 23.5%;
+	float:left;
+	display: inline-block;
+	margin: 5px;
+	padding: 3px;
+	border: 2px solid #FF2600;
+	background-color: #F5F5F5;
+}
+
+input{
+	float: right;
+}
+
+#time{
+	float:right;
+}
+
+#dropDownH, #resInput{
+	float: right;
+	width:50px;
+	padding-right:1px;
+	margin-right:3px;
+}
+
+#dropDownM{
+	margin-right:20px;
+}
+
+#limit, #dso, #pv, #batt{
+	border:1px solid #999
+}
+
+#log {
+	display: none;
+	resize: none;
+	position: absolute;
+	top: 60px;
+	right: 30px;
+	padding: 10px;
+	border: 5px solid #08C;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+	width: 590px;
+	height: 253px;
+    clear: both;
+}
+
+
+#content, #content1{
+	margin: 5px;
+	padding: 0px;
+	line-height: 1.4;
+	float: left;
+	width: 98%;
+	border: 1px solid #08C;
+	background-color: #F5F5F5;
+}
+
+#content0{
+	margin: 5px;
+	padding: 0px;
+	line-height: 1.4;
+	float: left;
+	width: 98%;
+}
+
+#gauges{
+	margin: 5px;
+
+}
+
+
+footer{
+	/*float: left;*/
+	clear: both;
+	color: #ddd;
+	font-size: 90%;
+	height: 40px !important;
+	padding: 10px 15px !important;
+	background: #333 none repeat scroll 0% 0% !important;
+	border-top: 5px solid #08C !important;
+	position: relative;
+	z-index: 10;
+	margin-top: -3em;
+}
+
+/***********************************************************
+*/
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 40%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui-timepicker-div .ui_tpicker_unit_hide{ display: none; }
+
+.ui-timepicker-div .ui_tpicker_time .ui_tpicker_time_input { background: none; color: inherit; border: none; outline: none; border-bottom: solid 1px #555; width: 95%; }
+.ui-timepicker-div .ui_tpicker_time .ui_tpicker_time_input:focus { border-bottom-color: #aaa; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 40% 10px 10px; }
+

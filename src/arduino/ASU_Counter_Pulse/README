@@ -1,0 +1,7 @@
+This version has been compiled with
+the standard original Arduino IDE v1.6.5.
+
+MemoryFree library needed:
+
+https://github.com/maniacbug/MemoryFree
+

@@ -1,0 +1,54 @@
+LOG FILE
+
+[22/Jan/2016 - 15:54:25] (logging) Load energy TURNED ON. Battery discharging!
+[22/Jan/2016 - 16:00:26] (logging) Load energy TURNED ON. PV energy selected.
+[22/Jan/2016 - 16:05:25] (logging) Load energy TURNED ON. Battery discharging!
+[22/Jan/2016 - 16:06:26] (logging) Load energy TURNED ON. PV energy selected.
+[22/Jan/2016 - 16:07:25] (logging) Load energy TURNED ON. Battery discharging!
+[22/Jan/2016 - 16:16:26] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[01/Aug/2016 - 16:20:52] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[01/Aug/2016 - 16:23:51] (logging) Load energy TURNED OFF. Energy requested beyond limits.
+[03/Aug/2016 - 10:41:53] (logging) Load energy TURNED ON. Battery discharging!
+[03/Aug/2016 - 11:16:52] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 14:24:55] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 14:40:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 14:42:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 14:52:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 15:00:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:07:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 15:09:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:24:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 15:27:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:32:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 15:35:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:36:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 15:39:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 15:41:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:43:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 15:46:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:48:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 15:51:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:53:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 15:56:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 15:58:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 16:00:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 16:02:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 16:05:54] (logging) Load energy TURNED OFF. Energy requested beyond limits.
+[08/Aug/2016 - 16:12:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 16:14:54] (logging) Load energy TURNED ON. Energy within limits.
+[08/Aug/2016 - 16:24:54] (logging) Load energy TURNED OFF. Requested energy higher then limits!
+[08/Aug/2016 - 16:26:54] (logging) Load energy TURNED OFF. Energy requested beyond limits.
+[08/Aug/2016 - 22:29:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 22:36:54] (logging) Load energy TURNED ON. PV energy selected.
+[08/Aug/2016 - 22:43:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 22:46:54] (logging) Load energy TURNED ON. PV+DSO.
+[08/Aug/2016 - 22:49:54] (logging) Load energy TURNED ON. Energy within limits.
+[08/Aug/2016 - 22:53:54] (logging) Load energy TURNED ON. Battery discharging!
+[08/Aug/2016 - 22:59:53] (logging) Load energy TURNED ON. PV energy selected.
+[09/Aug/2016 - 10:23:54] (logging) Load energy TURNED ON. Battery discharging!
+[09/Aug/2016 - 10:35:54] (logging) Load energy TURNED ON. PV energy selected.
+[09/Aug/2016 - 10:40:54] (logging) Load energy TURNED ON. Battery discharging!
+[09/Aug/2016 - 10:43:54] (logging) Load energy TURNED OFF. Requested power greater then DSO.
+[09/Aug/2016 - 10:45:54] (logging) Load energy TURNED OFF. Requested energy higher then limits.
+[09/Aug/2016 - 10:49:54] (logging) Load energy TURNED ON. Battery discharging!
+[09/Aug/2016 - 10:55:54] (logging) Load energy TURNED ON. Enough power from DSO.
