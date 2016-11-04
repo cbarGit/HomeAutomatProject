@@ -1,2 +1,4 @@
 pc_simulator/js/* linguist-vendored
-utils.js linguist-vendored=false
+pc_simulator/css/* linguist-vendored
+pc_simulator/js/utils.js linguist-vendored=false
+pc_simulator/js/style.css linguist-vendored=false
