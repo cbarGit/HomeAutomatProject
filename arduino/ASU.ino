@@ -42,7 +42,7 @@ OTHER
 #include <MemoryFree.h>
 #if ARDUINO < 100
 #include <WProgram.h>
-#include <pins_arduino.h> 
+#include <pins_arduino.h>
 #else
 #include <Arduino.h>
 #endif
@@ -246,12 +246,16 @@ void checkWiflyWatchdog()
 #include <Ethernet.h>
 
 // mac address
-static byte mac_address[] = { 0x90, 0xA2, 0xDA, 0x0D, 0x12, 0x53 };
+static byte mac_address[] = { 0x90, 0xA2, 0xDA, 0x0D, 0x12, 0x52 };
 
-//static byte mac_address[] = { 0x90, 0xA2, 0xDA, 0xEF, 0xFE, 0xED };
+// ip address: 10 for counter, 11 for relay
+#ifdef COUNTER
+IPAddress ip_address(192,168,1,10);
+#endif
 
-// ip address
+#ifdef RELAY
 IPAddress ip_address(192,168,1,11);
+#endif
 
 String getMacString()
 {
@@ -526,130 +530,23 @@ float get_temperature()
 
 #endif
 
-//-----------------------------------------------------------------------------------------------
-// Power Meter
-//-----------------------------------------------------------------------------------------------
 
-#ifdef INTERRUPT_SO
+#ifdef PULSE_SO
+volatile unsigned long counter = 0;   
 
-volatile boolean so_pulse_timer_running;  // status timer so: true=start , false=stop
-volatile unsigned long so_pulse_timer_start; // time (us): timer start
-volatile unsigned long so_pulse_timer_stop;  // time (us): timer stop
-volatile unsigned long us_between_so_pulses; // time pulse interval so (us)   
-
-// # of pulses for each kWh of electric energy
-const unsigned long num_pulses_per_kwh = 1000;
-
-const unsigned long max_us_between_so_pulses = 450000000;
-volatile double ms_between_so_pulses;    
-volatile double s_between_so_pulses;    
-boolean so_pulse_timer_overflow_detected;
-
-double power; // current consumed power
-
-// At each SO pulse, this function is called. 
-void pulse_so(void) 
-{
-   if(so_pulse_timer_running == false ) 
-   {           
-      // first pulse received
-     
-      // start the SO pulse timer   
-      so_pulse_timer_start = micros();
-      
-      // SO timer is running
-      so_pulse_timer_running = true;
-      
-      // time between two pulses reset
-      us_between_so_pulses = 0;
-      ms_between_so_pulses = 0;    
-      s_between_so_pulses = 0; 
-   } 
-   else 
-   {                 
-      // stop the SO pulse timer     
-      so_pulse_timer_stop = micros(); 
-      
-      if (so_pulse_timer_overflow_detected == true)
-      {
-        if (so_pulse_timer_stop <= so_pulse_timer_start)
-        {
-          us_between_so_pulses = 4294967295 - so_pulse_timer_start;
-          us_between_so_pulses += so_pulse_timer_stop;
-        }  
-        else
-        {
-          s_between_so_pulses += (double)4294.967296;
-          us_between_so_pulses += so_pulse_timer_stop - so_pulse_timer_start;
-        }  
-      }
-      else if (so_pulse_timer_stop <= so_pulse_timer_start)
-      {
-        us_between_so_pulses = 4294967295 - so_pulse_timer_start;
-        us_between_so_pulses += so_pulse_timer_stop;
-      }  
-      else
-      {
-        us_between_so_pulses += so_pulse_timer_stop - so_pulse_timer_start;
-      }
-
-      // update the power    
-      ms_between_so_pulses = (double)us_between_so_pulses/1000.0;    
-      s_between_so_pulses += ms_between_so_pulses/1000.0;    
-      power = wpulse_s / s_between_so_pulses;
-      
-      // reset the counters
-      us_between_so_pulses = 0;
-      ms_between_so_pulses = 0;
-      s_between_so_pulses = 0;
-      so_pulse_timer_overflow_detected = false;
-      
-      // update the timer
-      so_pulse_timer_start = so_pulse_timer_stop;            
-   }   
+void onPulse(){
+  (int)counter++;
 }
-
 // Setup
-void powerMeterSetup()
-{
-   // agganciamo l'interrupt al pin INTERUPT_SO, chiamiamo la funzione pulse_so sul fronte di discesa.
-   attachInterrupt(INTERRUPT_SO, pulse_so, FALLING); // interrupt pulse counter so, FALLING: HIGH --> LOW
+void pulseMeterSetup()
+{  
+   // agganciamo l'interrupt al pin PULSE_SO, chiamiamo la funzione pulse_so sul fronte di discesa.
+   //attachInterrupt(digitalPinToInterrupt(PULSE_SO), onPulse, FALLING); // interrupt pulse counter so, FALLING: HIGH --> LOW
+   attachInterrupt(digitalPinToInterrupt(3), onPulse, FALLING); // interrupt pulse counter so, FALLING: HIGH --> LOW
 
-   // init status timer so
-   so_pulse_timer_running = false; 
-   
-   // no over flow
-   so_pulse_timer_overflow_detected = false;
-   
-   // init power
-   power = 0;   
 }
-
-// Loop
-void checkPower()
-{
-   if (so_pulse_timer_running == true)
-   {
-     // at least one pulse has been detected
-     
-     // check if there was a timer overflow
-     if (micros() < so_pulse_timer_start)
-     {
-       // we have an overflow,
-       so_pulse_timer_overflow_detected = true;       
-     }
-     else if (so_pulse_timer_overflow_detected == true)
-     {
-       // we had an overflow, but now we overcome it. 
-       so_pulse_timer_overflow_detected = false;
-       
-       // Let's cumulate the seconds
-       s_between_so_pulses += (double)4294.967296;       
-     }  
-   }          	           	
-}
-
 #endif
+
 
 //-----------------------------------------------------------------------------------------------
 // Free Memory
@@ -764,6 +661,10 @@ void setup()
   #ifdef INTERRUPT_SO
    powerMeterSetup();
   #endif
+
+  #ifdef PULSE_SO
+   pulseMeterSetup();
+  #endif
   
   #ifdef PERIPHERAL_RN_WIFLY
    WiFlySetup(); 
@@ -862,10 +763,18 @@ String getJson()
       json += "\"";
     #endif
     
-    #ifdef INTERRUPT_SO
+    #ifdef POWER_SO
       if (add_comma) json += ", "; else add_comma = true;
       json += " \"power\": \"";
       json += dtostrf(power,2,2,strbuf);
+      json += "\"";  
+    #endif
+
+    #ifdef PULSE_SO
+      if (add_comma) json += ", "; else add_comma = true;
+      json += " \"pulses\": \"";
+      //json += dtostrf(counter,2,0,strbuf);
+      json += String(counter);
       json += "\"";  
     #endif
     
@@ -1161,4 +1070,5 @@ void loop()
     serialDebug();
    #endif
   #endif 
+
 }
