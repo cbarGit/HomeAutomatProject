@@ -31,4 +31,4 @@ Every module (*arduino, pc_simulator and rpi*) has his own README file.
 
 So the project is structured like in the image below:
 
-![alt tag](https://raw.githubusercontent.com/cbarGit/HomeAutomatProject/doc/logic.png)
+![alt tag](https://github.com/cbarGit/HomeAutomatProject/master/doc/logic.png)
