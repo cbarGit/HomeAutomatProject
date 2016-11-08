@@ -28,3 +28,7 @@ The house includes the installation of photovoltaic panels, a battery for energy
 ####The paper thesis (<em>in italian sorry</em>) is under the `doc` folder, right [here](https://github.com/cbarGit/HomeAutomatProject/blob/master/doc/tesi.pdf).
 
 Every module (*arduino, pc_simulator and rpi*) has his own README file.
+
+So the project is structured like in the image below:
+
+![alt tag](https://raw.githubusercontent.com/cbarGit/HomeAutomatProject/doc/logic.png)
