@@ -25,6 +25,8 @@ The house includes the installation of photovoltaic panels, a battery for energy
 - **Switch**
 - **Lamp 100W** (<em>for simulate an energy load</em>)
 
+The code used is written in **Python**, Web Programming languages (such as **Javascript** and **HTML**/**CSS**) and with **Wiring** (the Arduino software development).
+
 ####The paper thesis (<em>in italian sorry</em>) is under the `doc` folder, right [here](https://github.com/cbarGit/HomeAutomatProject/blob/master/doc/tesi.pdf).
 
 Every module (*arduino, pc_simulator and rpi*) has his own README file.
