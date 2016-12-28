@@ -1,3 +1,4 @@
 pc_simulator/js/* linguist-vendored
 pc_simulator/js/themes/* linguist-vendored
 pc_simulator/css/* linguist-vendored
+arduino/* linguist-vendored
